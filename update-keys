@@ -24,6 +24,7 @@ EOF
 
 rm -rf master packager packager-revoked msys2-trusted msys2-revoked
 mkdir master packager packager-revoked
+touch msys2-trusted msys2-revoked
 
 while read -ra data; do
 	keyid="${data[0]}"
