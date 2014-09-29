@@ -5,7 +5,7 @@ export LANG=C
 TMPDIR=$(mktemp -d)
 trap "rm -rf '${TMPDIR}'" EXIT
 
-KEYSERVER='hkp://pgp.mit.edu:11371'
+KEYSERVER='hkp://pool.sks-keyservers.net'
 GPG="gpg --quiet --batch --no-tty --no-permission-warning --keyserver "${KEYSERVER}" --homedir ${TMPDIR}"
 
 pushd "$(dirname "$0")" >/dev/null
@@ -28,7 +28,6 @@ mkdir master packager packager-revoked
 while read -ra data; do
 	keyid="${data[0]}"
 	username="${data[@]:1}"
-	echo "User is $username"
 	${GPG} --recv-keys ${keyid} &>/dev/null
 	printf 'minimize\nquit\ny\n' | \
 		${GPG} --command-fd 0 --edit-key ${keyid}
