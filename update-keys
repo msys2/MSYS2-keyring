@@ -39,6 +39,7 @@ ${GPG} --import-ownertrust < msys2-trusted 2>/dev/null
 
 while read -ra data; do
 	keyid="${data[0]}"
+	printf "Receive ${keyid}"
 	${GPG} --recv-keys ${keyid} &>/dev/null
 done < packager-keyids
 while read -ra data; do
@@ -46,6 +47,7 @@ while read -ra data; do
 	username="${data[@]:1}"
 	printf 'clean\nquit\ny\n' | \
 		${GPG} --command-fd 0 --edit-key ${keyid}
+	${GPG} --list-keys --with-colons ${keyid} 
 	if ! ${GPG} --list-keys --with-colons ${keyid} 2>/dev/null | grep -q '^pub:f:'; then
 		echo "key is not fully trusted: ${keyid} ${username}"
 	else
