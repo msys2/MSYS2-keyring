@@ -18,6 +18,7 @@ Key-Usage: sign
 Name-Real: MSYS2 Keyring Keychain Master Key
 Name-Email: msys2-keyring@localhost
 Expire-Date: 0
+%no-protection
 %commit
 %echo Done
 EOF
