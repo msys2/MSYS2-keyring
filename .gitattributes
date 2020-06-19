@@ -5,3 +5,8 @@ master-keyids	export-ignore
 packager-keyids	export-ignore
 master		export-ignore
 packager	export-ignore
+.editorconfig	export-ignore
+master-revoked-keyids	export-ignore
+master-revoked	export-ignore
+packager-revoked-keyids	export-ignore
+packager-revoked	export-ignore
