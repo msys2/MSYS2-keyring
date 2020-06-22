@@ -90,4 +90,5 @@ while read -ra data; do
 	echo "${keyid}" >> msys2-revoked
 done < packager-revoked-keyids
 
+shopt -s nullglob
 cat master/*.asc master-revoked/*.asc packager/*.asc packager-revoked/*.asc > msys2.gpg
