@@ -17,6 +17,7 @@ no-tty
 no-permission-warning
 export-options no-export-attributes,export-clean
 keyserver ${KEYSERVER}
+keyserver-options no-self-sigs-only
 armor
 no-emit-version
 __EOF__
