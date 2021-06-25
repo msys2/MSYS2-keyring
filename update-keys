@@ -7,7 +7,7 @@ export LANG=C
 TMPDIR=$(mktemp -d)
 trap "rm -rf '${TMPDIR}'" EXIT
 
-KEYSERVER='hkp://pool.sks-keyservers.net'
+KEYSERVER='keyserver.ubuntu.com'
 GPG=(gpg --homedir "${TMPDIR}")
 
 cat << __EOF__ > "${TMPDIR}"/gpg.conf
