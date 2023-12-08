@@ -19,3 +19,8 @@ jobs:
         run: |
           ./update-keys
           git diff --exit-code
+
+      - name: Lint keys
+        run: |
+          cargo install sequoia-keyring-linter
+          sequoia-keyring-linter packager/* master/Elieux.asc master/lazka.asc
