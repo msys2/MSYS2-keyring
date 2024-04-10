@@ -20,6 +20,7 @@ keyserver ${KEYSERVER}
 keyserver-options no-self-sigs-only
 armor
 no-emit-version
+allow-weak-key-signatures
 __EOF__
 
 cd "$(dirname "$0")"
